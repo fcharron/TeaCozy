@@ -1,6 +1,7 @@
+/* General styling */
 body{
-  margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  margin: 0; /* Reset default */
+  font-family: Helvetica, Arial, sans-serif; /* Added fallbacks since Helvetica does not come with Windows*/
   font-size: 22px;
   color: seashell;
   background-color: black;
@@ -13,36 +14,50 @@ h2{
 }
 
 h3 {
-  margin: 0;
+  margin: 0; /* Reset default */
 }
 
 h4 {
   margin: 10px;
 }
 
+/*-- Header section --*/
+
+/* Header container */
 header{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
+  justify-content: space-between; /* Even space between Logo and Nav links block*/
+  align-items: center; /* Contents is centered vertically */
+
+  position: fixed; /* Always visible on top of the viewport */
   top: 0;
   height: 69px;
-  width: 100%;
+  width: 100%; /* Always occupies the full width of the viewport */
+  z-index: 2; /* On top of everything */
+  
   border-bottom: solid seashell 1px;
-  z-index: 2;
   background-color: black;
 }
 
+/* Logo */
 header img {
   height: 50px;
   padding: 10px;
 }
 
+/* Nav links */
 header span {
   padding: 0 10px;
   text-decoration: underline;
 }
 
+/*-- Main content section --*/
+#contents{
+  position: relative;
+  top: 44px; /* Compensate for fixed header space */
+}
+
+/* Vertical flex container of section blocks */
 main {
   display: flex;
   flex-direction: column;
@@ -50,20 +65,18 @@ main {
   align-items: center;
 }
 
-#contents{
-  position: relative;
-  top: 44px;
-}
-
+/* Each section is also a vertical flex container */
 .section{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
   padding: 35px;
   margin: 25px 0 10px 0;
 }
 
+/* Mission section */
 #mission{
   height: 700px;
   width: 1200px;
@@ -71,21 +84,24 @@ main {
   background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-mission-background.jpg");
 }
 
-#mission .text {
+#mission-text {
   background-color: black;
-  width: 100%;
+  width: 100%; /* Ensure text block occupies the full width of the viewport. */
 }
 
+/* Tea of the month section */
 #featured-tea {
   width: 1000px;
 }
 
+/* Horizontal container of tea description blocks */
 #teas {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+/* Tea description block is a vertical flex container of its image and description. */
 .tea {
   display: flex;
   flex-direction: column;
@@ -102,6 +118,8 @@ main {
   line-height: 22px;
 }
 
+/* Locations section */
+/* Vertical flex container */
 #locations{
   background-image: url("https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-4/img-locations-background.jpg");
   display: flex;
@@ -114,24 +132,29 @@ main {
   padding: 35px 0 0 0;
 }
 
+/* List of adresses, each one a flex container */
 #addresses{
   display: flex;
   flex-wrap: nowrap;
 }
 
+/* One location */
 .location{
   width: 300px;
   padding: 20px 0;
   margin: 0 20px;
+  
   background-color: black;
   opacity: 1;
 }
 
+/* Fine-tune location address text position */
 .location p {
   padding: 32px 0 11px 0;
   margin: 0 0 1px 0;
 }
 
+/* Footer section */
 footer{
   height: 200px;
   margin: 0 0 20px 0;
@@ -142,6 +165,6 @@ footer h2{
 }
 
 #copyright {
-  margin: 0 0 0 20px;
+  margin: 0 0 30px 20px;
   text-align: left;
 }
